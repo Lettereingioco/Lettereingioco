@@ -1,0 +1,87 @@
+[
+  {
+    "slug": "dispacci-per-la-serenissima",
+    "titolo": "Dispacci per la Serenissima",
+    "disciplina": "Storia",
+    "classe": "2ª",
+    "argomento": "Le guerre d'Italia nel Cinquecento",
+    "genere": "Avventura strategica",
+    "durata": "45-60 minuti, divisibile in due lezioni",
+    "sintesi": "La classe è al servizio di Venezia come agente segreto e attraversa sette missioni, dalla discesa di Carlo VIII alla fine del secolo. A ogni missione raccoglie indizi, ricostruisce cause ed effetti e consiglia il Senato.",
+    "attivita": [
+      "Esplorare scene storiche e parlare con personaggi dell'epoca",
+      "Ricostruire catene di cause ed effetti dagli indizi raccolti",
+      "Prendere decisioni strategiche e confrontarle con le scelte storiche"
+    ],
+    "obiettivi": [
+      "Collocare nel tempo e nello spazio le guerre d'Italia",
+      "Riconoscere i rapporti di causa ed effetto tra gli eventi",
+      "Comprendere il punto di vista degli Stati italiani dell'epoca"
+    ],
+    "valutazione": "Punteggio su base 50 con tre livelli: base, intermedio, avanzato. La schermata finale indica le pagine da ripassare.",
+    "stato": "in-preparazione"
+  },
+  {
+    "slug": "il-libro-mastro-del-granduca",
+    "titolo": "Il Libro Mastro del Granduca",
+    "disciplina": "Storia",
+    "classe": "2ª",
+    "argomento": "Il Seicento e la nascita del sistema-mondo",
+    "genere": "Gioco strategico-economico",
+    "durata": "45-60 minuti, divisibile in due lezioni",
+    "sintesi": "Al servizio del Granduca di Toscana, la classe viaggia per otto città dell'economia del Seicento. Alla fine siede nel Consiglio e sceglie la politica economica dello Stato, osservandone gli effetti.",
+    "attivita": [
+      "Visitare porti, banchi e botteghe del Seicento",
+      "Classificare informazioni e ricostruire i legami tra commercio, lavoro e finanza",
+      "Scegliere tre politiche economiche e misurarne gli effetti su quattro indicatori"
+    ],
+    "obiettivi": [
+      "Comprendere i cambiamenti dell'economia europea e mondiale nel Seicento",
+      "Collegare scelte economiche e conseguenze sociali",
+      "Usare il lessico specifico dell'economia storica"
+    ],
+    "valutazione": "Punteggio su base 50 con tre livelli: base, intermedio, avanzato. La schermata finale indica le pagine da ripassare.",
+    "stato": "in-preparazione"
+  },
+  {
+    "slug": "ciance-con-cecco",
+    "titolo": "Ciance con Cecco",
+    "disciplina": "Italiano",
+    "classe": "2ª",
+    "argomento": "La poesia comico-realistica del Duecento",
+    "genere": "Dialogo con un autore",
+    "durata": "",
+    "sintesi": "Una conversazione in chat con Cecco Angiolieri, che risponde nell'italiano del Duecento. Per conoscere il poeta, il suo tempo e la sua lingua facendogli domande.",
+    "attivita": [
+      "Fare domande a Cecco Angiolieri e leggere le sue risposte",
+      "Osservare le differenze tra l'italiano del Duecento e quello di oggi"
+    ],
+    "obiettivi": [
+      "Conoscere un autore della letteratura delle origini",
+      "Riflettere sull'evoluzione della lingua italiana"
+    ],
+    "valutazione": "",
+    "stato": "in-preparazione"
+  },
+  {
+    "slug": "il-caso-della-classe",
+    "titolo": "Il caso della classe",
+    "disciplina": "Italiano",
+    "classe": "2ª",
+    "argomento": "Il genere giallo",
+    "genere": "Narrazione investigativa",
+    "durata": "",
+    "sintesi": "Una narrazione interattiva in cui la classe diventa la squadra investigativa: raccoglie indizi, interroga, formula ipotesi e risolve il caso, scoprendo le regole del genere giallo.",
+    "attivita": [
+      "Raccogliere e ordinare gli indizi",
+      "Formulare e verificare ipotesi",
+      "Riconoscere personaggi, struttura e tecniche del giallo"
+    ],
+    "obiettivi": [
+      "Riconoscere le caratteristiche del genere giallo",
+      "Leggere in modo inferenziale"
+    ],
+    "valutazione": "",
+    "stato": "in-preparazione"
+  }
+]

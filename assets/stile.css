@@ -1,0 +1,163 @@
+/* Lettere in gioco — foglio di stile
+   Carta da quaderno, inchiostro blu, matita gialla: il tabellone del gioco dell'oca è l'unico elemento vistoso. */
+
+@font-face { font-family: "Young Serif"; src: url("fonts/young-serif-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Atkinson Hyperlegible"; src: url("fonts/atkinson-hyperlegible-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Atkinson Hyperlegible"; src: url("fonts/atkinson-hyperlegible-latin-400-italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "Atkinson Hyperlegible"; src: url("fonts/atkinson-hyperlegible-latin-700-normal.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Atkinson Hyperlegible"; src: url("fonts/atkinson-hyperlegible-latin-700-italic.woff2") format("woff2"); font-weight: 700; font-style: italic; font-display: swap; }
+
+:root {
+  --carta: #fafaf6;
+  --quadretti: #d9e3f0;
+  --inchiostro: #1d2f6f;
+  --testo: #23262d;
+  --grigio: #5a6170;
+  --matita: #f0b92b;
+  --matita-chiara: #fbe7ae;
+  --correzione: #c2372e;
+  --storia: #2e6b5a;
+  --italiano: #b2322a;
+  --geografia: #2b62a8;
+  --misura: 68ch;
+  --serif: "Young Serif", Georgia, serif;
+  --sans: "Atkinson Hyperlegible", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--carta);
+  color: var(--testo);
+  font-family: var(--sans);
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+img, svg { max-width: 100%; }
+a { color: var(--inchiostro); text-underline-offset: 0.18em; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 3px solid var(--correzione); outline-offset: 3px; border-radius: 2px; }
+
+h1, h2, h3 { font-family: var(--serif); font-weight: 400; color: var(--inchiostro); line-height: 1.15; margin: 0 0 0.5em; }
+h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); letter-spacing: -0.01em; }
+h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); }
+h3 { font-size: 1.3rem; }
+p { margin: 0 0 1em; max-width: var(--misura); }
+
+.contenitore { width: min(1120px, 100% - 2rem); margin-inline: auto; }
+.salta { position: absolute; left: -9999px; }
+.salta:focus { left: 1rem; top: 1rem; background: var(--carta); padding: 0.5rem 1rem; z-index: 10; }
+
+/* Testata */
+.testata { border-bottom: 1px solid var(--quadretti); }
+.testata .contenitore { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 1rem; flex-wrap: wrap; }
+.marchio { font-family: var(--serif); font-size: 1.45rem; color: var(--inchiostro); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; }
+.marchio svg { width: 30px; height: 30px; flex: none; }
+.menu { display: flex; gap: 1.5rem; list-style: none; margin: 0; padding: 0; }
+.menu a { text-decoration: none; font-weight: 700; }
+.menu a[aria-current="page"] { text-decoration: underline; text-decoration-color: var(--matita); text-decoration-thickness: 3px; }
+
+/* Apertura: foglio a quadretti con il margine rosso */
+.apertura {
+  background-color: var(--carta);
+  background-image:
+    linear-gradient(var(--quadretti) 1px, transparent 1px),
+    linear-gradient(90deg, var(--quadretti) 1px, transparent 1px);
+  background-size: 24px 24px;
+  border-bottom: 1px solid var(--quadretti);
+  position: relative;
+}
+.apertura::before { content: ""; position: absolute; top: 0; bottom: 0; left: max(1rem, calc((100% - 1120px) / 2 - 1.5rem)); border-left: 2px solid rgba(194, 55, 46, 0.45); }
+.apertura .contenitore { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 3rem; align-items: center; padding-block: 4rem 4.5rem; }
+.apertura .sottotitolo { font-size: 1.2rem; }
+.azioni { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+
+.pulsante { display: inline-block; font: 700 1rem/1.2 var(--sans); padding: 0.8rem 1.3rem; border-radius: 6px; border: 2px solid var(--inchiostro); background: var(--inchiostro); color: #fff; text-decoration: none; cursor: pointer; }
+.pulsante:hover { background: #142256; }
+.pulsante.secondario { background: transparent; color: var(--inchiostro); }
+.pulsante.secondario:hover { background: rgba(29, 47, 111, 0.07); }
+.pulsante[aria-disabled="true"] { background: transparent; border-color: #b9bfcc; color: var(--grigio); cursor: not-allowed; }
+
+/* Il tabellone del gioco dell'oca */
+.tabellone { margin: 0; }
+.caselle { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
+.casella { grid-row: var(--r); grid-column: var(--c); aspect-ratio: 1; position: relative; border: 2px solid var(--inchiostro); border-radius: 4px; background: var(--carta); padding: 0.45rem; display: flex; flex-direction: column; justify-content: space-between; font-size: 0.8rem; line-height: 1.2; }
+.casella .numero { font-family: var(--serif); font-size: 1.05rem; color: var(--inchiostro); }
+.casella.libera { border-style: dashed; border-color: #9aa6c4; }
+.casella.libera .numero { color: #8792b3; }
+.casella.gioco { background: var(--matita); }
+.casella.gioco a { color: var(--testo); text-decoration: none; font-weight: 700; }
+.casella.gioco a::after { content: ""; position: absolute; inset: 0; }
+.casella.gioco:hover { background: #f5c94e; }
+.casella.gioco:focus-within { outline: 3px solid var(--correzione); outline-offset: 2px; }
+.casella .oca { width: 60%; align-self: flex-end; color: #8792b3; }
+.casella.arrivo { background: var(--inchiostro); border-color: var(--inchiostro); }
+.casella.arrivo .numero, .casella.arrivo span { color: #fff; }
+.tabellone figcaption { margin-top: 0.75rem; color: var(--grigio); font-size: 1rem; }
+
+/* Sezioni */
+.sezione { padding-block: 4rem; }
+.sezione + .sezione { border-top: 1px solid var(--quadretti); }
+.intro { margin-bottom: 2rem; }
+
+/* Catalogo */
+.filtri { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0 0 2rem; padding: 0; border: 0; }
+.filtri legend { font-weight: 700; margin-bottom: 0.5rem; width: 100%; }
+.filtro { font: 700 0.95rem var(--sans); padding: 0.45rem 0.95rem; border-radius: 999px; border: 2px solid var(--inchiostro); background: transparent; color: var(--inchiostro); cursor: pointer; }
+.filtro[aria-pressed="true"] { background: var(--inchiostro); color: #fff; }
+.schede { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.5rem 3rem; }
+.scheda { border-top: 6px solid var(--colore, var(--inchiostro)); padding-top: 1rem; }
+.scheda[data-disciplina="Storia"] { --colore: var(--storia); }
+.scheda[data-disciplina="Italiano"] { --colore: var(--italiano); }
+.scheda[data-disciplina="Geografia"] { --colore: var(--geografia); }
+.scheda h3 { margin-bottom: 0.25rem; }
+.scheda h3 a { text-decoration: none; }
+.scheda h3 a:hover { text-decoration: underline; }
+.dati { color: var(--grigio); font-size: 1rem; margin-bottom: 0.75rem; }
+.disciplina { color: var(--colore); font-weight: 700; }
+.stato { display: inline-block; font-size: 0.85rem; font-weight: 700; padding: 0.1rem 0.55rem; border-radius: 4px; background: var(--matita-chiara); color: #6b4f00; margin-left: 0.4rem; }
+.vuoto { color: var(--grigio); font-style: italic; }
+
+/* Passi */
+.passi { list-style: none; counter-reset: passo; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; }
+.passi li { counter-increment: passo; }
+.passi li::before { content: counter(passo); display: grid; place-items: center; width: 2.6rem; height: 2.6rem; border: 2px solid var(--inchiostro); border-radius: 4px; font-family: var(--serif); font-size: 1.25rem; color: var(--inchiostro); background: var(--matita); margin-bottom: 0.75rem; }
+
+/* Newsletter */
+.newsletter { background: var(--inchiostro); color: #fff; }
+.newsletter h2 { color: #fff; }
+.newsletter p { color: #dfe5f5; }
+.newsletter .contenitore { padding-block: 3.5rem; }
+
+/* Pagine interne */
+.pagina { padding-block: 3rem 4rem; }
+.pagina .contenuto { max-width: 46rem; }
+.briciole { font-size: 1rem; margin-bottom: 1.5rem; }
+.scheda-didattica { display: grid; grid-template-columns: 11rem 1fr; gap: 0.6rem 1.5rem; margin: 1.5rem 0 2.5rem; padding: 1.5rem 0; border-block: 1px solid var(--quadretti); }
+.scheda-didattica dt { font-weight: 700; color: var(--inchiostro); }
+.scheda-didattica dd { margin: 0; }
+.scheda-didattica ul { margin: 0; padding-left: 1.2rem; }
+.nota { color: var(--grigio); font-size: 1rem; }
+
+/* Piede */
+.piede { border-top: 1px solid var(--quadretti); padding-block: 2rem; font-size: 0.95rem; color: var(--grigio); }
+.piede .contenitore { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
+.piede ul { list-style: none; display: flex; gap: 1.25rem; margin: 0; padding: 0; }
+
+@media (max-width: 820px) {
+  .apertura .contenitore { grid-template-columns: 1fr; padding-block: 2.5rem 3rem; gap: 2rem; }
+  .apertura::before { display: none; }
+  .schede, .passi { grid-template-columns: 1fr; }
+  .scheda-didattica { grid-template-columns: 1fr; gap: 0.2rem; }
+  .scheda-didattica dd { margin-bottom: 0.8rem; }
+}
+@media (max-width: 480px) {
+  .caselle { grid-template-columns: repeat(3, 1fr); }
+  .casella { grid-row: auto; grid-column: auto; }
+  .menu { gap: 1rem; }
+}
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+
+.pagina h2 { margin-top: 2.5rem; }
+.pagina .azioni + .nota { margin-top: 0.75rem; }
