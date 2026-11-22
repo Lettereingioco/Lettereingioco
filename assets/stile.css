@@ -161,3 +161,6 @@ p { margin: 0 0 1em; max-width: var(--misura); }
 
 .pagina h2 { margin-top: 2.5rem; }
 .pagina .azioni + .nota { margin-top: 0.75rem; }
+
+.newsletter .pulsante { background: #fff; border-color: #fff; color: var(--inchiostro); margin-top: 0.5rem; }
+.newsletter .pulsante:hover { background: var(--matita-chiara); border-color: var(--matita-chiara); }

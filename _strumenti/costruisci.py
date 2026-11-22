@@ -14,6 +14,7 @@ GIOCHI = json.loads((RADICE / "_strumenti" / "giochi.json").read_text(encoding="
 ANNO = 2026
 DISCIPLINE = ["Storia", "Italiano", "Geografia"]
 EMAIL_CONTATTO = ""  # da inserire: indirizzo personale per i contatti
+NEWSLETTER = "https://lettereingioco.substack.com/subscribe"
 LICENZA_URL = "https://creativecommons.org/licenses/by-nc-sa/4.0/deed.it"
 
 OCA = ('<svg class="oca" viewBox="0 0 40 32" aria-hidden="true"><path fill="currentColor" '
@@ -66,6 +67,7 @@ def pagina(titolo, descrizione, corpo, livello=0, attivo=""):
     <ul>
       <li><a href="{r}chi-sono/index.html">Chi sono</a></li>
       <li><a href="{r}privacy/index.html">Privacy</a></li>
+      <li><a href="{NEWSLETTER}" target="_blank" rel="noopener">Newsletter</a></li>
       <li><a href="https://www.youtube.com/@lettereingioco" target="_blank" rel="noopener">YouTube</a></li>
       <li><a href="https://www.instagram.com/lettereingioco/" target="_blank" rel="noopener">Instagram</a></li>
       <li><a href="https://www.facebook.com/lettereingioco" target="_blank" rel="noopener">Facebook</a></li>
@@ -167,7 +169,8 @@ def home():
 <section class="newsletter" aria-labelledby="titolo-newsletter">
   <div class="contenitore">
     <h2 id="titolo-newsletter">Un gioco nuovo ogni settimana</h2>
-    <p>Con la newsletter della domenica ricevi il gioco della settimana, un'idea per usarlo in classe e il prompt con cui è nato. L'iscrizione apre a gennaio 2027.</p>
+    <p>Con la newsletter della domenica ricevi il gioco della settimana, un'idea per usarlo in classe e il prompt con cui è nato. La prima uscita è il 17 gennaio 2027.</p>
+    <a class="pulsante" href="{NEWSLETTER}" target="_blank" rel="noopener">Iscriviti alla newsletter</a>
   </div>
 </section>
 
@@ -259,7 +262,7 @@ def privacy():
 <article class="pagina">
   <div class="contenitore contenuto">
     <h1>Privacy</h1>
-    <p class="sottotitolo">Questo sito non usa cookie, non traccia le visite e non raccoglie dati personali.</p>
+    <p class="sottotitolo">Questo sito non usa cookie, non traccia le visite e non raccoglie direttamente dati personali.</p>
     <h2>Titolare</h2>
     <p>Il sito è curato da Giorgio Guerra.{titolare}</p>
     <h2>Cookie e statistiche</h2>
@@ -269,7 +272,8 @@ def privacy():
     <h2>I giochi</h2>
     <p>I giochi non chiedono nomi né account. Alcuni salvano i progressi della partita nella memoria del browser, solo sul dispositivo in uso: nessun dato viene inviato al sito. Per cancellarli basta il pulsante "Nuova partita" o la pulizia dei dati del browser.</p>
     <h2>Newsletter</h2>
-    <p>Quando l'iscrizione sarà attiva, questa pagina indicherà quale servizio la gestisce, quali dati raccoglie e come cancellarsi.</p>
+    <p>La newsletter è gestita con Substack, servizio di Substack, Inc. L'iscrizione avviene sul sito di Substack, a cui il pulsante "Iscriviti alla newsletter" rimanda: questo sito non raccoglie direttamente nessun indirizzo.</p>
+    <p>Per iscriversi basta l'indirizzo email, che serve solo per inviare la newsletter. Ogni email contiene il link per cancellarsi in qualunque momento. Il trattamento dei dati da parte di Substack è descritto nella sua <a href="https://substack.com/privacy" target="_blank" rel="noopener">informativa sulla privacy</a>.</p>
     <p class="nota">Ultimo aggiornamento: novembre 2026.</p>
   </div>
 </article>
