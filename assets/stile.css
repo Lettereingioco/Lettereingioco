@@ -1,5 +1,5 @@
 /* Lettere in gioco — foglio di stile
-   Carta da quaderno, inchiostro blu, matita gialla: il tabellone del gioco dell'oca è l'unico elemento vistoso. */
+   Carta da quaderno e gamma di verdi: il tabellone del gioco dell'oca è l'unico elemento vistoso. */
 
 @font-face { font-family: "Young Serif"; src: url("fonts/young-serif-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
 @font-face { font-family: "Atkinson Hyperlegible"; src: url("fonts/atkinson-hyperlegible-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
@@ -8,15 +8,15 @@
 @font-face { font-family: "Atkinson Hyperlegible"; src: url("fonts/atkinson-hyperlegible-latin-700-italic.woff2") format("woff2"); font-weight: 700; font-style: italic; font-display: swap; }
 
 :root {
-  --carta: #fafaf6;
-  --quadretti: #d9e3f0;
-  --inchiostro: #1d2f6f;
-  --testo: #23262d;
-  --grigio: #5a6170;
-  --matita: #f0b92b;
-  --matita-chiara: #fbe7ae;
+  --carta: #f7faf5;
+  --quadretti: #d6e6d9;
+  --inchiostro: #1e4636;
+  --testo: #1f2a24;
+  --grigio: #56665c;
+  --matita: #8cc084;
+  --matita-chiara: #d9edd2;
   --correzione: #c2372e;
-  --storia: #2e6b5a;
+  --storia: #9a5b1e;
   --italiano: #b2322a;
   --geografia: #2b62a8;
   --misura: 68ch;
@@ -68,15 +68,15 @@ p { margin: 0 0 1em; max-width: var(--misura); }
   border-bottom: 1px solid var(--quadretti);
   position: relative;
 }
-.apertura::before { content: ""; position: absolute; top: 0; bottom: 0; left: max(1rem, calc((100% - 1120px) / 2 - 1.5rem)); border-left: 2px solid rgba(194, 55, 46, 0.45); }
+.apertura::before { content: ""; position: absolute; top: 0; bottom: 0; left: max(1rem, calc((100% - 1120px) / 2 - 1.5rem)); border-left: 2px solid rgba(30, 70, 54, 0.35); }
 .apertura .contenitore { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 3rem; align-items: center; padding-block: 4rem 4.5rem; }
 .apertura .sottotitolo { font-size: 1.2rem; }
 .azioni { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
 
 .pulsante { display: inline-block; font: 700 1rem/1.2 var(--sans); padding: 0.8rem 1.3rem; border-radius: 6px; border: 2px solid var(--inchiostro); background: var(--inchiostro); color: #fff; text-decoration: none; cursor: pointer; }
-.pulsante:hover { background: #142256; }
+.pulsante:hover { background: #163528; }
 .pulsante.secondario { background: transparent; color: var(--inchiostro); }
-.pulsante.secondario:hover { background: rgba(29, 47, 111, 0.07); }
+.pulsante.secondario:hover { background: rgba(30, 70, 54, 0.07); }
 .pulsante[aria-disabled="true"] { background: transparent; border-color: #b9bfcc; color: var(--grigio); cursor: not-allowed; }
 
 /* Il tabellone del gioco dell'oca */
@@ -84,14 +84,14 @@ p { margin: 0 0 1em; max-width: var(--misura); }
 .caselle { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
 .casella { grid-row: var(--r); grid-column: var(--c); aspect-ratio: 1; position: relative; border: 2px solid var(--inchiostro); border-radius: 4px; background: var(--carta); padding: 0.45rem; display: flex; flex-direction: column; justify-content: space-between; font-size: 0.8rem; line-height: 1.2; }
 .casella .numero { font-family: var(--serif); font-size: 1.05rem; color: var(--inchiostro); }
-.casella.libera { border-style: dashed; border-color: #9aa6c4; }
-.casella.libera .numero { color: #8792b3; }
+.casella.libera { border-style: dashed; border-color: #93b19c; }
+.casella.libera .numero { color: #7d9c87; }
 .casella.gioco { background: var(--matita); }
 .casella.gioco a { color: var(--testo); text-decoration: none; font-weight: 700; }
 .casella.gioco a::after { content: ""; position: absolute; inset: 0; }
-.casella.gioco:hover { background: #f5c94e; }
+.casella.gioco:hover { background: #9fcf97; }
 .casella.gioco:focus-within { outline: 3px solid var(--correzione); outline-offset: 2px; }
-.casella .oca { width: 60%; align-self: flex-end; color: #8792b3; }
+.casella .oca { width: 60%; align-self: flex-end; color: #7d9c87; }
 .casella.arrivo { background: var(--inchiostro); border-color: var(--inchiostro); }
 .casella.arrivo .numero, .casella.arrivo span { color: #fff; }
 .tabellone figcaption { margin-top: 0.75rem; color: var(--grigio); font-size: 1rem; }
@@ -116,7 +116,7 @@ p { margin: 0 0 1em; max-width: var(--misura); }
 .scheda h3 a:hover { text-decoration: underline; }
 .dati { color: var(--grigio); font-size: 1rem; margin-bottom: 0.75rem; }
 .disciplina { color: var(--colore); font-weight: 700; }
-.stato { display: inline-block; font-size: 0.85rem; font-weight: 700; padding: 0.1rem 0.55rem; border-radius: 4px; background: var(--matita-chiara); color: #6b4f00; margin-left: 0.4rem; }
+.stato { display: inline-block; font-size: 0.85rem; font-weight: 700; padding: 0.1rem 0.55rem; border-radius: 4px; background: var(--matita-chiara); color: #2c5a3c; margin-left: 0.4rem; }
 .vuoto { color: var(--grigio); font-style: italic; }
 
 /* Passi */
@@ -127,7 +127,7 @@ p { margin: 0 0 1em; max-width: var(--misura); }
 /* Newsletter */
 .newsletter { background: var(--inchiostro); color: #fff; }
 .newsletter h2 { color: #fff; }
-.newsletter p { color: #dfe5f5; }
+.newsletter p { color: #dcebe1; }
 .newsletter .contenitore { padding-block: 3.5rem; }
 
 /* Pagine interne */
