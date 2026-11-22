@@ -66,6 +66,9 @@ def pagina(titolo, descrizione, corpo, livello=0, attivo=""):
     <ul>
       <li><a href="{r}chi-sono/index.html">Chi sono</a></li>
       <li><a href="{r}privacy/index.html">Privacy</a></li>
+      <li><a href="https://www.youtube.com/@lettereingioco" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="https://www.instagram.com/lettereingioco/" target="_blank" rel="noopener">Instagram</a></li>
+      <li><a href="https://www.facebook.com/lettereingioco" target="_blank" rel="noopener">Facebook</a></li>
     </ul>
   </div>
 </footer>
