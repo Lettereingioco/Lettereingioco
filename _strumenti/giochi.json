@@ -19,7 +19,7 @@
       "Comprendere il punto di vista degli Stati italiani dell'epoca"
     ],
     "valutazione": "Punteggio su base 50 con tre livelli: base, intermedio, avanzato. La schermata finale indica le pagine da ripassare.",
-    "stato": "in-preparazione"
+    "stato": "pronto"
   },
   {
     "slug": "il-libro-mastro-del-granduca",
@@ -41,7 +41,7 @@
       "Usare il lessico specifico dell'economia storica"
     ],
     "valutazione": "Punteggio su base 50 con tre livelli: base, intermedio, avanzato. La schermata finale indica le pagine da ripassare.",
-    "stato": "in-preparazione"
+    "stato": "pronto"
   },
   {
     "slug": "ciance-con-cecco",
@@ -62,6 +62,28 @@
       "Riflettere sull'evoluzione della lingua italiana"
     ],
     "valutazione": "Bottega della lingua con esercizi su tre livelli: base (abbinamenti), intermedio (fenomeni della lingua antica), avanzato (prove di scrittura con autovalutazione).",
+    "stato": "pronto"
+  },
+  {
+    "slug": "dante-risponde",
+    "titolo": "Dante risponde",
+    "disciplina": "Italiano",
+    "classe": "2ª",
+    "argomento": "Dante Alighieri e la Commedia",
+    "genere": "Dialogo con un autore",
+    "durata": "60 minuti, divisibile in due lezioni",
+    "sintesi": "Un dialogo con Dante Alighieri in sei percorsi e 24 domande: la vita a Firenze, la politica e l'esilio, le opere, la Commedia e i tre regni dell'aldilà. Ogni risposta offre la parafrasi dei versi citati e un approfondimento, con la mappa dell'universo dantesco.",
+    "attivita": [
+      "Fare domande a Dante e leggere le sue risposte, con parafrasi e note",
+      "Esplorare la mappa dell'aldilà: Inferno, Purgatorio e Paradiso",
+      "Raccogliere le parole chiave per capire Dante e la Commedia"
+    ],
+    "obiettivi": [
+      "Conoscere la vita e le opere di Dante nel loro contesto storico",
+      "Comprendere la struttura e i contenuti della Commedia",
+      "Leggere e parafrasare versi della Commedia"
+    ],
+    "valutazione": "Prova su tre livelli: base (personaggi e ruoli), intermedio (tappe della vita e domande a scelta multipla), avanzato (due scritture con lista di autovalutazione).",
     "stato": "pronto"
   },
   {

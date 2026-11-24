@@ -19,9 +19,15 @@ LICENZA = "https://creativecommons.org/licenses/by-nc-sa/4.0/deed.it"
 FONT_DIR = Path(__file__).resolve().parent / "font-giochi"
 FONT = {  # famiglia CSS -> [(file, peso, stile)]
     "Grenze Gotisch": [("grenze-gotisch-latin-500-normal", 500, "normal"), ("grenze-gotisch-latin-700-normal", 700, "normal")],
-    "Alegreya": [("alegreya-latin-400-normal", 400, "normal"), ("alegreya-latin-600-normal", 600, "normal"), ("alegreya-latin-400-italic", 400, "italic")],
+    "Alegreya": [("alegreya-latin-400-normal", 400, "normal"), ("alegreya-latin-600-normal", 600, "normal"), ("alegreya-latin-700-normal", 700, "normal"), ("alegreya-latin-400-italic", 400, "italic")],
     "DM Serif Display": [("dm-serif-display-latin-400-normal", 400, "normal"), ("dm-serif-display-latin-400-italic", 400, "italic")],
     "Special Elite": [("special-elite-latin-400-normal", 400, "normal")],
+    "Della Respira": [("della-respira-latin-400-normal", 400, "normal")],
+    "Cormorant Garamond": [("cormorant-garamond-latin-500-normal", 500, "normal"), ("cormorant-garamond-latin-600-normal", 600, "normal"), ("cormorant-garamond-latin-500-italic", 500, "italic")],
+    "IM Fell DW Pica SC": [("im-fell-dw-pica-sc-latin-400-normal", 400, "normal")],
+    "IM Fell English SC": [("im-fell-english-sc-latin-400-normal", 400, "normal")],
+    "Spectral": [("spectral-latin-400-normal", 400, "normal"), ("spectral-latin-600-normal", 600, "normal"), ("spectral-latin-700-normal", 700, "normal"), ("spectral-latin-400-italic", 400, "italic")],
+    "Alegreya Sans SC": [("alegreya-sans-sc-latin-500-normal", 500, "normal"), ("alegreya-sans-sc-latin-700-normal", 700, "normal")],
     "Atkinson Hyperlegible": [("atkinson-hyperlegible-latin-400-normal", 400, "normal"), ("atkinson-hyperlegible-latin-700-normal", 700, "normal"), ("atkinson-hyperlegible-latin-400-italic", 400, "italic")],
 }
 
@@ -36,7 +42,7 @@ FIRMA_CSS = """
 
 
 def font_face(html):
-    usati = [f for f in FONT if f in html]
+    usati = [f for f in FONT if f'"{f}"' in html or f"family={f.replace(' ', '+')}" in html]
     regole = []
     for fam in usati:
         for nome, peso, stile in FONT[fam]:
