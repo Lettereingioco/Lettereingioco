@@ -50,38 +50,40 @@
     "classe": "2ª",
     "argomento": "La poesia comico-realistica del Duecento",
     "genere": "Dialogo con un autore",
-    "durata": "",
-    "sintesi": "Una conversazione in chat con Cecco Angiolieri, che risponde nell'italiano del Duecento. Per conoscere il poeta, il suo tempo e la sua lingua facendogli domande.",
+    "durata": "50-60 minuti, divisibile in due lezioni",
+    "sintesi": "Una conversazione con Cecco Angiolieri, che risponde nell'italiano del Duecento. Sei percorsi e 24 domande sulla sua vita, i sonetti, la poesia del tempo e la tenzone con Dante, con il glossario personale delle parole antiche.",
     "attivita": [
-      "Fare domande a Cecco Angiolieri e leggere le sue risposte",
-      "Osservare le differenze tra l'italiano del Duecento e quello di oggi"
+      "Fare domande a Cecco Angiolieri e leggere le sue risposte, con traduzione e note storiche",
+      "Raccogliere in un glossario personale le parole del Duecento",
+      "Lavorare sulla lingua antica nella Bottega della lingua"
     ],
     "obiettivi": [
       "Conoscere un autore della letteratura delle origini",
       "Riflettere sull'evoluzione della lingua italiana"
     ],
-    "valutazione": "",
-    "stato": "in-preparazione"
+    "valutazione": "Bottega della lingua con esercizi su tre livelli: base (abbinamenti), intermedio (fenomeni della lingua antica), avanzato (prove di scrittura con autovalutazione).",
+    "stato": "pronto"
   },
   {
-    "slug": "il-caso-della-classe",
-    "titolo": "Il caso della classe",
+    "slug": "il-caso-del-libro-d-ore",
+    "titolo": "Il caso del Libro d'Ore",
     "disciplina": "Italiano",
     "classe": "2ª",
     "argomento": "Il genere giallo",
     "genere": "Narrazione investigativa",
-    "durata": "",
-    "sintesi": "Una narrazione interattiva in cui la classe diventa la squadra investigativa: raccoglie indizi, interroga, formula ipotesi e risolve il caso, scoprendo le regole del genere giallo.",
+    "durata": "Circa 60 minuti, divisibile in due lezioni",
+    "sintesi": "Una narrazione interattiva in cinque capitoli: la classe è la squadra investigativa e indaga sul furto di un manoscritto del Quattrocento in una biblioteca di paese, scoprendo passo dopo passo le regole del genere giallo.",
     "attivita": [
-      "Raccogliere e ordinare gli indizi",
-      "Formulare e verificare ipotesi",
-      "Riconoscere personaggi, struttura e tecniche del giallo"
+      "Esplorare le scene e raccogliere gli indizi nel taccuino della squadra",
+      "Risolvere gli enigmi sulla teoria del giallo",
+      "Scegliere tra quattro ipotesi e formulare l'accusa finale"
     ],
     "obiettivi": [
-      "Riconoscere le caratteristiche del genere giallo",
+      "Riconoscere personaggi, struttura e tecniche del genere giallo",
+      "Distinguere fabula e intreccio, narratore interno ed esterno",
       "Leggere in modo inferenziale"
     ],
-    "valutazione": "",
-    "stato": "in-preparazione"
+    "valutazione": "Punteggio su base 50 con tre livelli: base, intermedio, avanzato. Il rapporto finale indica le schede da ripassare.",
+    "stato": "pronto"
   }
 ]
