@@ -1202,7 +1202,7 @@ function vistaGuida(){
       <li><strong>Tempi:</strong> 50-60 minuti; si può dividere in due lezioni (missioni I-IV, poi V-VIII e Consiglio). Il gioco ricorda i progressi su questo dispositivo.</li>
       <li><strong>Organizzazione:</strong> a coppie o in piccoli gruppi, con un ruolo di «contabile» che legge e registra e uno di «agente» che decide dove cliccare. Nel Consiglio ogni gruppo deve motivare a voce le sue tre scelte.</li>
       <li><strong>La tratta degli schiavi</strong> è presentata come testimonianza: chi gioca non guadagna mai dal commercio di persone. Prima della missione VIII può essere utile introdurre il tema in classe.</li>
-      <li><strong>Punteggio a base 50</strong> con tre livelli: base (0-29), intermedio (30-41), avanzato (42-50). Il giudizio finale indica le pagine da ripassare.</li>
+      <li><strong>Punteggio a base 50</strong> con tre livelli: sotto 30 livello non ancora raggiunto; da 30 livello base (voto 6); da 40 livello intermedio; 50 livello avanzato. Il giudizio finale indica le pagine da ripassare.</li>
       <li><strong>Dopo il gioco:</strong> chiedi una relazione di 8-10 righe al Granduca che confronti un Paese in crisi e uno prospero, con almeno tre indizi del libro mastro e due connettivi causali.</li>
     </ul>
   <h3>Crediti e licenza</h3><p>Gioco ideato da Giorgio Guerra e realizzato con l'aiuto di Claude (Anthropic). Licenza <a style="color:var(--carminio)" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.it" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>: si può usare e adattare citando l'autore, senza scopi commerciali, condividendo le modifiche con la stessa licenza. Altri giochi gratuiti su <a style="color:var(--carminio)" href="https://lettereingioco.it" target="_blank" rel="noopener">lettereingioco.it</a>.</p>
@@ -1338,9 +1338,10 @@ function vistaFinale(){
   const tot=puntiTotali(), max=SCENE.length*MAX_SCENA+MAX_CONSIGLIO;
   const voto=Math.round(tot/max*50);
   let liv,titolo,frase;
-  if(voto>=42){liv="Livello avanzato";titolo="Consigliere del Granduca";frase="Le tue relazioni hanno spiegato con chiarezza cause ed effetti della crisi, e le tue proposte hanno messo la Toscana sulla strada giusta.";}
-  else if(voto>=30){liv="Livello intermedio";titolo="Agente di commercio";frase="Hai capito gran parte dei meccanismi dell'economia del Seicento. Ripassa le missioni segnate per diventare consigliere.";}
-  else {liv="Livello base";titolo="Apprendista del banco";frase="Hai completato il viaggio e raccolto molte informazioni. Riprendi le pagine indicate e rigioca: il Granduca ti darà un'altra occasione.";}
+  if(voto>=50){liv="Livello avanzato";titolo="Consigliere del Granduca";frase="Le tue relazioni hanno spiegato con chiarezza cause ed effetti della crisi, e le tue proposte hanno messo la Toscana sulla strada giusta.";}
+  else if(voto>=40){liv="Livello intermedio";titolo="Agente di commercio";frase="Hai capito gran parte dei meccanismi dell'economia del Seicento. Ripassa le missioni segnate per diventare consigliere.";}
+  else if(voto>=30){liv="Livello base";titolo="Apprendista del banco";frase="Hai raggiunto il livello base: conosci i fatti principali dell'economia del Seicento. Ripassa le missioni segnate per rendere più precise le tue relazioni.";}
+  else {liv="Livello non ancora raggiunto";titolo="Recluta del banco";frase="Hai completato il viaggio e raccolto molte informazioni. Riprendi le pagine indicate e rigioca: il Granduca ti darà un'altra occasione.";}
   const righe=SCENE.map((sc,i)=>{const r=S.risultati[i]||{puzzle:0,dec:0,esp:0}; const pt=r.puzzle+r.dec+r.esp; return `<tr><td>${ROMANI[i]}. ${esc(sc.luogo)}, ${sc.anno}</td><td class="n">${r.puzzle}/3</td><td class="n">${r.dec}/3</td><td class="n">${r.esp}/1</td><td>${pt>=6?"—":"Ripassa "+sc.pagine}</td></tr>`;}).join("");
   const pc=puntiConsiglio();
   return `<div class="stage carta">${svgMappa()}<div class="velatura"></div><div class="cartiglio"><small>1630 - 1669</small>Viaggio compiuto</div></div>

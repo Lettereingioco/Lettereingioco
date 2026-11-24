@@ -1069,7 +1069,7 @@ function vistaGuida(){
       <li><strong>Tempi:</strong> 45-60 minuti per l'intero percorso; si può dividere in due lezioni (missioni I-IV e V-VII). Il gioco ricorda i progressi su questo dispositivo.</li>
       <li><strong>Organizzazione:</strong> funziona bene a coppie o in piccoli gruppi, con un ruolo di «cancelliere» che legge ad alta voce e uno di «agente» che decide dove cliccare.</li>
       <li><strong>Struttura di ogni missione:</strong> esplorazione (lettura e selezione di informazioni), catena causa-effetto o classificazione (come i box CAUSA/EFFETTO del manuale), decisione strategica con spiegazione.</li>
-      <li><strong>Punteggio a base 50</strong> con tre livelli: base (0-29), intermedio (30-41), avanzato (42-50). Il dispaccio finale indica, missione per missione, le pagine del manuale da ripassare.</li>
+      <li><strong>Punteggio a base 50</strong> con tre livelli: sotto 30 livello non ancora raggiunto; da 30 livello base (voto 6); da 40 livello intermedio; 50 livello avanzato. Il dispaccio finale indica, missione per missione, le pagine del manuale da ripassare.</li>
       <li><strong>Dopo il gioco:</strong> chiedi alla classe di scrivere un vero dispaccio di 8-10 righe al Doge, usando almeno tre indizi del taccuino e due connettivi causali.</li>
     </ul>
   <h3>Crediti e licenza</h3><p>Gioco ideato da Giorgio Guerra e realizzato con l'aiuto di Claude (Anthropic). Licenza <a style="color:var(--carminio)" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.it" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>: si può usare e adattare citando l'autore, senza scopi commerciali, condividendo le modifiche con la stessa licenza. Altri giochi gratuiti su <a style="color:var(--carminio)" href="https://lettereingioco.it" target="_blank" rel="noopener">lettereingioco.it</a>.</p>
@@ -1174,9 +1174,10 @@ function vistaFinale(){
   const tot=puntiTotali(), max=SCENE.length*MAX_SCENA;
   const voto=Math.round(tot/max*50);
   let liv,titolo,frase;
-  if(voto>=42){liv="Livello avanzato";titolo="Procuratore di San Marco";frase="I tuoi dispacci hanno guidato la Repubblica con lucidità: hai riconosciuto cause, effetti e interessi in gioco in quasi ogni situazione.";}
-  else if(voto>=30){liv="Livello intermedio";titolo="Ambasciatore della Repubblica";frase="Hai servito bene Venezia: la maggior parte delle tue analisi era corretta. Ripassa le missioni segnate per diventare imbattibile.";}
-  else {liv="Livello base";titolo="Segretario di cancelleria";frase="Hai completato il viaggio e raccolto molte informazioni. Riprendi le pagine indicate e rigioca le missioni: il Senato ti darà un'altra occasione.";}
+  if(voto>=50){liv="Livello avanzato";titolo="Procuratore di San Marco";frase="I tuoi dispacci hanno guidato la Repubblica con lucidità: hai riconosciuto cause, effetti e interessi in gioco in ogni situazione.";}
+  else if(voto>=40){liv="Livello intermedio";titolo="Ambasciatore della Repubblica";frase="Hai servito bene Venezia: la maggior parte delle tue analisi era corretta. Ripassa le missioni segnate per diventare imbattibile.";}
+  else if(voto>=30){liv="Livello base";titolo="Segretario di cancelleria";frase="Hai raggiunto il livello base: conosci i fatti principali delle guerre del Cinquecento. Ripassa le missioni segnate per rendere più precise le tue analisi.";}
+  else {liv="Livello non ancora raggiunto";titolo="Recluta della cancelleria";frase="Hai completato il viaggio e raccolto molte informazioni. Riprendi le pagine indicate e rigioca le missioni: il Senato ti darà un'altra occasione.";}
   const righe=SCENE.map((sc,i)=>{const r=S.risultati[i]||{puzzle:0,dec:0,esp:0}; const pt=r.puzzle+r.dec+r.esp; return `<tr><td>${["I","II","III","IV","V","VI","VII"][i]}. ${esc(sc.luogo)}, ${sc.anno}</td><td class="n">${r.puzzle}/3</td><td class="n">${r.dec}/3</td><td class="n">${r.esp}/1</td><td>${pt>=6?"—":"Ripassa "+sc.pagine}</td></tr>`;}).join("");
   return `<div class="stage carta">${svgMappa()}<div class="velatura"></div><div class="cartiglio"><small>1494 - 1598</small>Missione compiuta</div></div>
   <div class="pergamena">
